@@ -16,13 +16,16 @@ class SummariesViewController: UIViewController {
 
     var presenter: SummariesPresenter!
 
-    let collectionView = UICollectionView()
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let configurator = SummariesConfigurator()
         configurator.configure(self)
+
+        view.backgroundColor = .green
+        collectionView.backgroundColor = .brown
 
         // Configure collectionView
         view.addSubview(collectionView)
@@ -33,6 +36,7 @@ class SummariesViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+        collectionView.register(SummaryCollectionViewCell.nib(), forCellWithReuseIdentifier: SummaryCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
 
@@ -67,7 +71,10 @@ extension SummariesViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SummaryCollectionViewCell.identifier, for: indexPath) as! SummaryCollectionViewCell
+        let viewModel = presenter.viewModel(at: indexPath)
+        cell.configure(from: viewModel)
+        return cell
     }
 }
 

@@ -16,6 +16,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.handleViewDidLoad()
+        view.backgroundColor = .red
     }
 }
 
