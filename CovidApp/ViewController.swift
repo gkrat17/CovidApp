@@ -13,7 +13,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let gateway: CovidStatGateway = LocalPersistenceCovidStatGatewayImplementation (
+        let gateway: CovidStatFetchingGateway = ApiCovidStatGatewayImplementation(service: ApiServiceImplemetation.defaultShared)
+
+        gateway.fetchSummaries { (result) in
+            switch result {
+            case .success(let summaries):
+                print("Success:", summaries)
+                let summary = summaries[0]
+                gateway.fetchDetails(for: summary.identifier) { (result) in
+                    print("Call of fetchDetails:", result)
+                }
+            case .failure(let error):
+                print("Error in fetchSummaries:", error)
+            }
+        }
+
+        /*let gateway: CovidStatGateway = LocalPersistenceCovidStatGatewayImplementation (
             service: PersistenceServiceImplementation.shared
         )
 
@@ -40,6 +55,6 @@ class ViewController: UIViewController {
                     }
                 }
             }
-        }
+        }*/
     }
 }

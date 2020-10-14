@@ -14,10 +14,11 @@ struct FetchConfirmedApiRequest: ApiServiceRequest {
     var urlRequest: URLRequest {
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        let now = Date()
-        let from = dateFormatter.string(from: Calendar.current.date(byAdding: .weekOfYear, value: -1, to: now)!)
-        let to = dateFormatter.string(from: now)
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        let calendar = Calendar.current
+        let starting = calendar.date(byAdding: .day, value: -1, to: Date())!
+        let from = dateFormatter.string(from: calendar.date(byAdding: .weekOfYear, value: -1, to: starting)!)
+        let to = dateFormatter.string(from: starting)
 
         let url = URL(string: "\(root)total/country/\(identifier)/status/confirmed?from=\(from)&to=\(to)")!
 

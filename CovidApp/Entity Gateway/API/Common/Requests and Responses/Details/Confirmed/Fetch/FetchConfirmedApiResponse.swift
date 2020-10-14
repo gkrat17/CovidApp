@@ -10,11 +10,11 @@ import Foundation
 struct FetchConfirmedApiResponse: Decodable {
 
     let cases: Int
-    let date: Date
+    let dateString: String
 
     enum CodingKeys: String, CodingKey {
         case cases = "Cases"
-        case date = "Date"
+        case dateString = "Date"
     }
 }
 
@@ -23,6 +23,9 @@ struct FetchConfirmedApiResponse: Decodable {
 extension FetchConfirmedApiResponse {
 
     func toConfirmedEntity() -> ConfirmedEntity {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        let date = dateFormatter.date(from: dateString)!
         return ConfirmedEntity(count: cases, date: date)
     }
 }
