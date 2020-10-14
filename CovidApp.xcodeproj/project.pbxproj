@@ -16,6 +16,9 @@
 		06091F21253764F100654ED2 /* ApiServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F20253764F100654ED2 /* ApiServiceResponse.swift */; };
 		06091F2925376F6D00654ED2 /* FetchConfirmedApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F2825376F6D00654ED2 /* FetchConfirmedApiResponse.swift */; };
 		06091F362537805300654ED2 /* CacheCovidStatGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F352537805300654ED2 /* CacheCovidStatGateway.swift */; };
+		06091F3E25378D3E00654ED2 /* SummariesFetchingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F3D25378D3E00654ED2 /* SummariesFetchingUseCase.swift */; };
+		06091F4325378D5300654ED2 /* DetailsFetchingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F4225378D5300654ED2 /* DetailsFetchingUseCase.swift */; };
+		06091F4825378D7900654ED2 /* NotificationUpdaterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F4725378D7900654ED2 /* NotificationUpdaterUseCase.swift */; };
 		06C1E9E42535D4D100089322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E32535D4D100089322 /* AppDelegate.swift */; };
 		06C1E9E62535D4D100089322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E52535D4D100089322 /* SceneDelegate.swift */; };
 		06C1E9E82535D4D100089322 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E72535D4D100089322 /* ViewController.swift */; };
@@ -69,6 +72,9 @@
 		06091F20253764F100654ED2 /* ApiServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceResponse.swift; sourceTree = "<group>"; };
 		06091F2825376F6D00654ED2 /* FetchConfirmedApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchConfirmedApiResponse.swift; sourceTree = "<group>"; };
 		06091F352537805300654ED2 /* CacheCovidStatGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCovidStatGateway.swift; sourceTree = "<group>"; };
+		06091F3D25378D3E00654ED2 /* SummariesFetchingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummariesFetchingUseCase.swift; sourceTree = "<group>"; };
+		06091F4225378D5300654ED2 /* DetailsFetchingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFetchingUseCase.swift; sourceTree = "<group>"; };
+		06091F4725378D7900654ED2 /* NotificationUpdaterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUpdaterUseCase.swift; sourceTree = "<group>"; };
 		06C1E9E02535D4D100089322 /* CovidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C1E9E32535D4D100089322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06C1E9E52535D4D100089322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -393,6 +399,7 @@
 		06C829CF2537047D00429BA6 /* Summaries Fetching */ = {
 			isa = PBXGroup;
 			children = (
+				06091F3D25378D3E00654ED2 /* SummariesFetchingUseCase.swift */,
 			);
 			path = "Summaries Fetching";
 			sourceTree = "<group>";
@@ -400,6 +407,7 @@
 		06C829D02537056300429BA6 /* Details Fetching */ = {
 			isa = PBXGroup;
 			children = (
+				06091F4225378D5300654ED2 /* DetailsFetchingUseCase.swift */,
 			);
 			path = "Details Fetching";
 			sourceTree = "<group>";
@@ -407,6 +415,7 @@
 		06C829D12537066500429BA6 /* Notification Updater */ = {
 			isa = PBXGroup;
 			children = (
+				06091F4725378D7900654ED2 /* NotificationUpdaterUseCase.swift */,
 			);
 			path = "Notification Updater";
 			sourceTree = "<group>";
@@ -542,6 +551,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06091EF3253758AA00654ED2 /* FetchSummariesApiRequest.swift in Sources */,
+				06091F3E25378D3E00654ED2 /* SummariesFetchingUseCase.swift in Sources */,
 				06C829B72536F6FB00429BA6 /* DBConfirmedEntity+CoreDataClass.swift in Sources */,
 				06C1E9E82535D4D100089322 /* ViewController.swift in Sources */,
 				06C829B52536F6FB00429BA6 /* DBCovidDetailsEntity+CoreDataClass.swift in Sources */,
@@ -550,6 +560,7 @@
 				06091F21253764F100654ED2 /* ApiServiceResponse.swift in Sources */,
 				06091F2925376F6D00654ED2 /* FetchConfirmedApiResponse.swift in Sources */,
 				06C1EA272535F23800089322 /* CovidStatFetchingGateway.swift in Sources */,
+				06091F4325378D5300654ED2 /* DetailsFetchingUseCase.swift in Sources */,
 				06091EEC2537418700654ED2 /* ApiService.swift in Sources */,
 				06091EE725373FBB00654ED2 /* ApiCovidStatGateway.swift in Sources */,
 				06C1EA4F25360A0700089322 /* PersistenceService.swift in Sources */,
@@ -567,6 +578,7 @@
 				06091F132537646B00654ED2 /* FetchSummariesApiResponse.swift in Sources */,
 				06C829C52536FA4B00429BA6 /* CovidStatPersistingGateway.swift in Sources */,
 				06C829B82536F6FB00429BA6 /* DBConfirmedEntity+CoreDataProperties.swift in Sources */,
+				06091F4825378D7900654ED2 /* NotificationUpdaterUseCase.swift in Sources */,
 				06C1EA202535F20600089322 /* LocalPersistenceCovidStatGateway.swift in Sources */,
 				06C829BA2536F6FB00429BA6 /* DBCovidSummaryEntity+CoreDataProperties.swift in Sources */,
 			);
