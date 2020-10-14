@@ -13,13 +13,35 @@ struct ApiCovidStatGatewayImplementation: ApiCovidStatGateway {
 
     let service: ApiService
 
-    func fetchSummaries(_ completion: FetchSummariesHandler) {
-        let _ = FetchSummariesApiRequest()
+    func fetchSummaries(_ completion: @escaping FetchSummariesHandler) {
+        let request = FetchSummariesApiRequest()
+        service.startRequest(request: request) { (result: Result<ApiServiceResponse<FetchSummariesApiResponse>, Error>) in
+            switch result {
+            case .success(let response):
+                completion(.success(response.entity.countries.map { $0.toCovidSummaryEntity() }))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 
     func fetchDetails(for identifier: CountryIdentifier,
-                      _ completion: FetchDetailsHandler) {
-        let _ = FetchConfirmedApiRequest(identifier: identifier)
+                      _ completion: @escaping FetchDetailsHandler) {
+        let request = FetchConfirmedApiRequest(identifier: identifier)
+        service.startRequest(request: request) { (result: Result<ApiServiceResponse<[FetchConfirmedApiResponse]>, Error>) in
+            switch result {
+            case .success(let response):
+                let confirmed = response.entity.map { $0.toConfirmedEntity() }
+                let details = CovidDetailsEntity (
+                    identifier: identifier,
+                    hasNotifications: false, // NOTE: API has not support for NotificationState
+                    confirmed: confirmed
+                )
+                completion(.success(details))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 
     // fetchNotificationsState and

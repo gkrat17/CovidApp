@@ -16,13 +16,13 @@ protocol CovidStatFetchingGateway {
     /**
      
      */
-    func fetchSummaries(_ completion: FetchSummariesHandler)
+    func fetchSummaries(_ completion: @escaping FetchSummariesHandler)
 
     /**
      
      */
     func fetchDetails(for identifier: CountryIdentifier,
-                      _ completion: FetchDetailsHandler)
+                      _ completion: @escaping FetchDetailsHandler)
 
     /**
      

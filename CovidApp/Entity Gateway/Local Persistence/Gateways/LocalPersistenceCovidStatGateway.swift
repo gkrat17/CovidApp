@@ -15,7 +15,7 @@ struct LocalPersistenceCovidStatGatewayImplementation: LocalPersistenceCovidStat
 
     // MARK: - CovidStatFetchingGateway Part
 
-    func fetchSummaries(_ completion: FetchSummariesHandler) {
+    func fetchSummaries(_ completion: @escaping FetchSummariesHandler) {
         service.context.fetchEntities(withType: DBCovidSummaryEntity.self) { (result) in
             switch result {
             case .success(let summaries):
@@ -27,7 +27,7 @@ struct LocalPersistenceCovidStatGatewayImplementation: LocalPersistenceCovidStat
     }
 
     func fetchDetails(for identifier: CountryIdentifier,
-                      _ completion: FetchDetailsHandler) {
+                      _ completion: @escaping FetchDetailsHandler) {
 
         requireDetails(for: identifier) { (result) in
             switch result {
