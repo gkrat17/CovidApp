@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SummariesViewController.swift
 //  CovidApp
 //
 //  Created by Giorgi Kratsashvili on 10/13/20.
@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class SummariesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,7 +22,7 @@
 		06091F632537964500654ED2 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F622537964500654ED2 /* DetailsViewController.swift */; };
 		06C1E9E42535D4D100089322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E32535D4D100089322 /* AppDelegate.swift */; };
 		06C1E9E62535D4D100089322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E52535D4D100089322 /* SceneDelegate.swift */; };
-		06C1E9E82535D4D100089322 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E72535D4D100089322 /* ViewController.swift */; };
+		06C1E9E82535D4D100089322 /* SummariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E72535D4D100089322 /* SummariesViewController.swift */; };
 		06C1E9EB2535D4D100089322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C1E9E92535D4D100089322 /* Main.storyboard */; };
 		06C1E9EE2535D4D100089322 /* CovidApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9EC2535D4D100089322 /* CovidApp.xcdatamodeld */; };
 		06C1E9F02535D4D200089322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06C1E9EF2535D4D200089322 /* Assets.xcassets */; };
@@ -80,7 +80,7 @@
 		06C1E9E02535D4D100089322 /* CovidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C1E9E32535D4D100089322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06C1E9E52535D4D100089322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		06C1E9E72535D4D100089322 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		06C1E9E72535D4D100089322 /* SummariesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummariesViewController.swift; sourceTree = "<group>"; };
 		06C1E9EA2535D4D100089322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06C1E9ED2535D4D100089322 /* CovidApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CovidApp.xcdatamodel; sourceTree = "<group>"; };
 		06C1E9EF2535D4D200089322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 		06091F60253795EF00654ED2 /* Summaries */ = {
 			isa = PBXGroup;
 			children = (
-				06C1E9E72535D4D100089322 /* ViewController.swift */,
+				06C1E9E72535D4D100089322 /* SummariesViewController.swift */,
 			);
 			path = Summaries;
 			sourceTree = "<group>";
@@ -588,7 +588,7 @@
 				06091EF3253758AA00654ED2 /* FetchSummariesApiRequest.swift in Sources */,
 				06091F3E25378D3E00654ED2 /* SummariesFetchingUseCase.swift in Sources */,
 				06C829B72536F6FB00429BA6 /* DBConfirmedEntity+CoreDataClass.swift in Sources */,
-				06C1E9E82535D4D100089322 /* ViewController.swift in Sources */,
+				06C1E9E82535D4D100089322 /* SummariesViewController.swift in Sources */,
 				06C829B52536F6FB00429BA6 /* DBCovidDetailsEntity+CoreDataClass.swift in Sources */,
 				06C1E9E42535D4D100089322 /* AppDelegate.swift in Sources */,
 				06091F362537805300654ED2 /* CacheCovidStatGateway.swift in Sources */,
