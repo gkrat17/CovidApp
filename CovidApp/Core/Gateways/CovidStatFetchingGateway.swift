@@ -28,5 +28,5 @@ protocol CovidStatFetchingGateway {
      
      */
     func fetchNotificationsState(for identifier: CountryIdentifier,
-                                 _ completion: FetchNotificationsStateHandler)
+                                 _ completion: @escaping FetchNotificationsStateHandler)
 }

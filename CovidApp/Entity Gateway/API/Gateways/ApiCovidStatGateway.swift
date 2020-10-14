@@ -48,7 +48,7 @@ struct ApiCovidStatGatewayImplementation: ApiCovidStatGateway {
     // CovidStatPersistingGateway protocol functions
     // are not supported by API
     func fetchNotificationsState(for identifier: CountryIdentifier,
-                                 _ completion: FetchNotificationsStateHandler) {
+                                 _ completion: @escaping FetchNotificationsStateHandler) {
         completion(.failure(CoreError(message: "No support for fetching notification state")))
     }
 }

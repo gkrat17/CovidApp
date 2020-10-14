@@ -15,6 +15,7 @@
 		06091F18253764D800654ED2 /* ApiServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F17253764D800654ED2 /* ApiServiceRequest.swift */; };
 		06091F21253764F100654ED2 /* ApiServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F20253764F100654ED2 /* ApiServiceResponse.swift */; };
 		06091F2925376F6D00654ED2 /* FetchConfirmedApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F2825376F6D00654ED2 /* FetchConfirmedApiResponse.swift */; };
+		06091F362537805300654ED2 /* CacheCovidStatGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F352537805300654ED2 /* CacheCovidStatGateway.swift */; };
 		06C1E9E42535D4D100089322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E32535D4D100089322 /* AppDelegate.swift */; };
 		06C1E9E62535D4D100089322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E52535D4D100089322 /* SceneDelegate.swift */; };
 		06C1E9E82535D4D100089322 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E72535D4D100089322 /* ViewController.swift */; };
@@ -67,6 +68,7 @@
 		06091F17253764D800654ED2 /* ApiServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceRequest.swift; sourceTree = "<group>"; };
 		06091F20253764F100654ED2 /* ApiServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceResponse.swift; sourceTree = "<group>"; };
 		06091F2825376F6D00654ED2 /* FetchConfirmedApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchConfirmedApiResponse.swift; sourceTree = "<group>"; };
+		06091F352537805300654ED2 /* CacheCovidStatGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCovidStatGateway.swift; sourceTree = "<group>"; };
 		06C1E9E02535D4D100089322 /* CovidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C1E9E32535D4D100089322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06C1E9E52535D4D100089322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,22 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		06091F3025377F8500654ED2 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				06091F342537803900654ED2 /* Gateways */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		06091F342537803900654ED2 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				06091F352537805300654ED2 /* CacheCovidStatGateway.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
 		06C1E9D72535D4D100089322 = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +288,7 @@
 			children = (
 				06091ED22537173700654ED2 /* API */,
 				06C1EA1D2535ECEF00089322 /* Local Persistence */,
+				06091F3025377F8500654ED2 /* Cache */,
 			);
 			path = "Entity Gateway";
 			sourceTree = "<group>";
@@ -527,6 +546,7 @@
 				06C1E9E82535D4D100089322 /* ViewController.swift in Sources */,
 				06C829B52536F6FB00429BA6 /* DBCovidDetailsEntity+CoreDataClass.swift in Sources */,
 				06C1E9E42535D4D100089322 /* AppDelegate.swift in Sources */,
+				06091F362537805300654ED2 /* CacheCovidStatGateway.swift in Sources */,
 				06091F21253764F100654ED2 /* ApiServiceResponse.swift in Sources */,
 				06091F2925376F6D00654ED2 /* FetchConfirmedApiResponse.swift in Sources */,
 				06C1EA272535F23800089322 /* CovidStatFetchingGateway.swift in Sources */,

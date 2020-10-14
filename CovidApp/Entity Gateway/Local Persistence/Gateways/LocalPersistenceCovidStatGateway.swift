@@ -46,7 +46,7 @@ struct LocalPersistenceCovidStatGatewayImplementation: LocalPersistenceCovidStat
     }
 
     func fetchNotificationsState(for identifier: CountryIdentifier,
-                                 _ completion: FetchNotificationsStateHandler) {
+                                 _ completion: @escaping FetchNotificationsStateHandler) {
 
         requireDetails(for: identifier) { (result) in
             switch result {
