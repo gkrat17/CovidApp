@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19E224g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DBConfirmedEntity" representedClassName="DBConfirmedEntity" syncable="YES">
+        <attribute name="count" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="details" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBCovidDetailsEntity" inverseName="confirmed" inverseEntity="DBCovidDetailsEntity"/>
+    </entity>
+    <entity name="DBCovidDetailsEntity" representedClassName="DBCovidDetailsEntity" syncable="YES">
+        <attribute name="notifications" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="confirmed" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DBConfirmedEntity" inverseName="details" inverseEntity="DBConfirmedEntity"/>
+        <relationship name="summary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBCovidSummaryEntity" inverseName="details" inverseEntity="DBCovidSummaryEntity"/>
+    </entity>
+    <entity name="DBCovidSummaryEntity" representedClassName="DBCovidSummaryEntity" syncable="YES">
+        <attribute name="countryName" attributeType="String"/>
+        <attribute name="identifier" attributeType="String"/>
+        <attribute name="totalConfirmed" attributeType="Integer 32" defaultValueString="-1" usesScalarValueType="YES"/>
+        <attribute name="totalDeaths" attributeType="Integer 32" defaultValueString="-1" usesScalarValueType="YES"/>
+        <attribute name="totalRecovered" attributeType="Integer 32" defaultValueString="-1" usesScalarValueType="YES"/>
+        <relationship name="details" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="DBCovidDetailsEntity" inverseName="summary" inverseEntity="DBCovidDetailsEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="identifier"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="DBConfirmedEntity" positionX="312.1640625" positionY="-17.71875" width="128" height="88"/>
+        <element name="DBCovidDetailsEntity" positionX="128.30078125" positionY="-17.78515625" width="128" height="88"/>
+        <element name="DBCovidSummaryEntity" positionX="-63" positionY="-18" width="128" height="133"/>
+    </elements>
+</model>
