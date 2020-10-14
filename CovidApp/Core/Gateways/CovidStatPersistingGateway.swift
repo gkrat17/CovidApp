@@ -28,7 +28,7 @@ protocol CovidStatPersistingGateway {
     /**
      
      */
-    func updateNotification(for identifier: CountryIdentifier,
-                            with notification: NotificationState,
-                            _ completion: UpdateNotificationHandler?)
+    func updateNotificationsState(for identifier: CountryIdentifier,
+                                  with state: NotificationsState,
+                                  _ completion: UpdateNotificationHandler?)
 }

@@ -7,7 +7,9 @@
 
 import CoreData
 
-struct LocalPersistenceCovidStatGateway: CovidStatGateway {
+protocol LocalPersistenceCovidStatGateway: CovidStatGateway { }
+
+struct LocalPersistenceCovidStatGatewayImplementation: LocalPersistenceCovidStatGateway {
 
     let service: PersistenceService
 
@@ -27,20 +29,29 @@ struct LocalPersistenceCovidStatGateway: CovidStatGateway {
     func fetchDetails(for identifier: CountryIdentifier,
                       _ completion: FetchDetailsHandler) {
 
-        fetchDetails(with: identifier) { (result) in
+        requireDetails(for: identifier) { (result) in
             switch result {
             case .success(let details):
 
-                if let details = details {
-                    if let details = details.toCovidDetailsEntity() {
-                        completion(.success(details))
-                    } else {
-                        completion(.failure(CoreError(message: "Some casting error occured while fetching details")))
-                    }
+                if let details = details.toCovidDetailsEntity() {
+                    completion(.success(details))
                 } else {
-                    completion(.success(nil))
+                    completion(.failure(CoreError(message: "Some casting error occured while fetching details")))
                 }
 
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
+    func fetchNotificationsState(for identifier: CountryIdentifier,
+                                 _ completion: FetchNotificationsStateHandler) {
+
+        requireDetails(for: identifier) { (result) in
+            switch result {
+            case .success(let details):
+                completion(.success(details.notifications))
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -58,7 +69,7 @@ struct LocalPersistenceCovidStatGateway: CovidStatGateway {
 
         for summary in summaries {
 
-            fetchSummary(with: summary.identifier) { (result) in
+            findSummary(for: summary.identifier) { (result) in
                 switch result {
                 case .success(let dbSummary):
 
@@ -83,7 +94,7 @@ struct LocalPersistenceCovidStatGateway: CovidStatGateway {
     func upsertDetails(_ details: CovidDetailsEntity,
                        _ completion: UpsertDetailsHandler?) {
 
-        fetchSummary(with: details.identifier) { (result) in
+        findSummary(for: details.identifier) { (result) in
             switch result {
             case .success(let summary):
 
@@ -111,33 +122,26 @@ struct LocalPersistenceCovidStatGateway: CovidStatGateway {
         }
     }
 
-    func updateNotification(for identifier: CountryIdentifier,
-                            with notification: NotificationState,
-                            _ completion: UpdateNotificationHandler?) {
+    func updateNotificationsState(for identifier: CountryIdentifier,
+                                  with state: NotificationsState,
+                                  _ completion: UpdateNotificationHandler?) {
 
-        fetchDetails(with: identifier) { (result) in
+        requireDetails(for: identifier) { (result) in
             switch result {
             case .success(let details):
-
-                if let details = details {
-                    details.notifications = notification
-                    service.saveContext() // error?
-                    completion?(.success(()))
-                } else {
-                    completion?(.failure(CoreError(message: "There are no details for requested identifier")))
-                }
-
+                details.notifications = state
+                service.saveContext() // error?
+                completion?(.success(()))
             case .failure(let error):
                 completion?(.failure(error))
             }
         }
-        
     }
 
     // MARK: - Helpers
 
-    private func fetchSummary(with identifier: CountryIdentifier,
-                              _ completion: (Result<DBCovidSummaryEntity?, Error>) -> Void) {
+    private func findSummary(for identifier: CountryIdentifier,
+                             _ completion: (Result<DBCovidSummaryEntity?, Error>) -> Void) {
 
         service.context.fetchEntities(withType: DBCovidSummaryEntity.self,
 
@@ -158,8 +162,8 @@ struct LocalPersistenceCovidStatGateway: CovidStatGateway {
         }
     }
 
-    private func fetchDetails(with identifier: CountryIdentifier,
-                              _ completion: (Result<DBCovidDetailsEntity?, Error>) -> Void) {
+    private func requireDetails(for identifier: CountryIdentifier,
+                                _ completion: (Result<DBCovidDetailsEntity, Error>) -> Void) {
 
         service.context.fetchEntities(withType: DBCovidDetailsEntity.self,
 
@@ -173,7 +177,11 @@ struct LocalPersistenceCovidStatGateway: CovidStatGateway {
             switch result {
             case .success(let details):
                 assert(details.count < 2) // comment me later
-                completion(.success(details.first))
+                if let details = details.first {
+                    completion(.success(details))
+                } else {
+                    completion(.failure(CoreError(message: "Requested covid details not found")))
+                }
             case .failure(let error):
                 completion(.failure(error))
             }

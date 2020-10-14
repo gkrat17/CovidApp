@@ -8,7 +8,8 @@
 import Foundation
 
 typealias FetchSummariesHandler = (Result<[CovidSummaryEntity], Error>) -> Void
-typealias FetchDetailsHandler = (Result<CovidDetailsEntity?, Error>) -> Void
+typealias FetchDetailsHandler = (Result<CovidDetailsEntity, Error>) -> Void
+typealias FetchNotificationsStateHandler = (Result<NotificationsState, Error>) -> Void
 
 protocol CovidStatFetchingGateway {
 
@@ -22,4 +23,10 @@ protocol CovidStatFetchingGateway {
      */
     func fetchDetails(for identifier: CountryIdentifier,
                       _ completion: FetchDetailsHandler)
+
+    /**
+     
+     */
+    func fetchNotificationsState(for identifier: CountryIdentifier,
+                                 _ completion: FetchNotificationsStateHandler)
 }

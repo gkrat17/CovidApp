@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let gateway: CovidStatGateway = LocalPersistenceCovidStatGateway (
+        let gateway: CovidStatGateway = LocalPersistenceCovidStatGatewayImplementation (
             service: PersistenceServiceImplementation.shared
         )
 

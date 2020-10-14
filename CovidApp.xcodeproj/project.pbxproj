@@ -108,6 +108,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06091ED22537173700654ED2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				06091EE125371D1200654ED2 /* Common */,
+				06091ED3253717B600654ED2 /* Gateways */,
+				06091EE225371D2000654ED2 /* Entities */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		06091ED3253717B600654ED2 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		06091EE125371D1200654ED2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		06091EE225371D2000654ED2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		06C1E9D72535D4D100089322 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +196,7 @@
 		06C1EA1C2535ECCC00089322 /* Entity Gateway */ = {
 			isa = PBXGroup;
 			children = (
+				06091ED22537173700654ED2 /* API */,
 				06C1EA1D2535ECEF00089322 /* Local Persistence */,
 			);
 			path = "Entity Gateway";

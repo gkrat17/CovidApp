@@ -7,11 +7,11 @@
 
 import Foundation
 
-typealias NotificationState = Bool
+typealias NotificationsState = Bool
 
 struct CovidDetailsEntity {
     let identifier: CountryIdentifier
-    let hasNotifications: NotificationState
+    let hasNotifications: NotificationsState
     let confirmed: [ConfirmedEntity]
 }
 
