@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+typealias DetailsFetchingHandler = (Result<CovidDetailsEntity, Error>) -> Void
+
+protocol DetailsFetchingUseCase {
+    func fetchDetails(_ completion: @escaping DetailsFetchingHandler)
+}
+
+struct DetailsFetchingUseCaseImplementation: DetailsFetchingUseCase {
+
+    let identifier: CountryIdentifier
+    let gateway: CovidStatFetchingGateway
+
+    func fetchDetails(_ completion: @escaping DetailsFetchingHandler) {
+        gateway.fetchDetails(for: identifier, completion)
+    }
+}
