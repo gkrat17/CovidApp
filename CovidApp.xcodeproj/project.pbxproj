@@ -244,7 +244,6 @@
 				06C1E9E92535D4D100089322 /* Main.storyboard */,
 				06C1E9EF2535D4D200089322 /* Assets.xcassets */,
 				06C1E9F12535D4D200089322 /* LaunchScreen.storyboard */,
-				06C1E9F42535D4D200089322 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -275,6 +274,7 @@
 				06C1EA242535F21800089322 /* Core */,
 				06C1EA1C2535ECCC00089322 /* Entity Gateway */,
 				06091F582537952E00654ED2 /* Supporting Files */,
+				06C1E9F42535D4D200089322 /* Info.plist */,
 			);
 			path = CovidApp;
 			sourceTree = "<group>";
