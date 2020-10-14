@@ -14,7 +14,7 @@ protocol PersistenceService {
 
 class PersistenceServiceImplementation: PersistenceService {
 
-    // MARK: - Singleton Shared Instance
+    // MARK: Singleton Shared Instance
 
     static let shared: PersistenceService = PersistenceServiceImplementation()
 

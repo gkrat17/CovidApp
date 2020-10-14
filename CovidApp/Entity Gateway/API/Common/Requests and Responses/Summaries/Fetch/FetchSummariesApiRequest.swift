@@ -1,0 +1,18 @@
+//
+//  FetchSummariesApiRequest.swift
+//  CovidApp
+//
+//  Created by Giorgi Kratsashvili on 10/14/20.
+//
+
+import Foundation
+
+struct FetchSummariesApiRequest: ApiServiceRequest {
+
+    var urlRequest: URLRequest {
+        let url = URL(string: "\(root)summary")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        return request
+    }
+}
