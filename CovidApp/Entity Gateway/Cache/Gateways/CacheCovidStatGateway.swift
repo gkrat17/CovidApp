@@ -36,9 +36,16 @@ struct CacheCovidStatGatewayImplementation: CacheCovidStatGateway {
                       _ completion: @escaping FetchDetailsHandler) {
         api.fetchDetails(for: identifier) { (result) in
             switch result {
-            case .success(let details):
-                local.upsertDetails(details, nil)
-                completion(.success(details))
+            case .success(var details):
+                // NOTE: we know that api does not have notifications state persisting support
+                // so we try to fetch it from local
+                local.fetchNotificationsState(for: identifier) { (result) in
+                    if case .success(let notificationState) = result {
+                        details.hasNotifications = notificationState
+                    }
+                    local.upsertDetails(details, nil)
+                    completion(.success(details))
+                }
             case .failure:
                 local.fetchDetails(for: identifier, completion)
             }

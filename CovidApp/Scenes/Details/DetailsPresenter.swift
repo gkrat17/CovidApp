@@ -11,6 +11,7 @@ protocol DetailsPresenter {
     func handleViewDidLoad()
     func numberOfItems(in section: Int) -> Int
     func viewModel(at indexPath: IndexPath) -> ConfirmedViewModel
+    func handleNotificationsTapped()
 }
 
 class DetailsPresenterImplementation: DetailsPresenter {
@@ -36,13 +37,14 @@ class DetailsPresenterImplementation: DetailsPresenter {
 
     func handleViewDidLoad() {
         detailsFetchingUseCase.fetchDetails { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
             case .success(let details):
-                self?.details = details
-                self?.view?.set(notifications: details.hasNotifications)
-                self?.view?.reloadData()
+                self.details = details
+                self.view?.set(notifications: details.hasNotifications)
+                self.view?.reloadData()
             case .failure(let error):
-                self?.view?.show(error: error.localizedDescription)
+                self.view?.show(error: error.localizedDescription)
             }
         }
     }
@@ -53,6 +55,19 @@ class DetailsPresenterImplementation: DetailsPresenter {
 
     func viewModel(at indexPath: IndexPath) -> ConfirmedViewModel {
         details.confirmed[indexPath.row].toConfirmedViewModel()
+    }
+
+    func handleNotificationsTapped() {
+        notificationsStateUpdaterUseCase.updateNotificationsState(with: !details.hasNotifications) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.details.hasNotifications.toggle()
+                self.view?.set(notifications: self.details.hasNotifications)
+            case .failure(let error):
+                self.view?.show(error: error.localizedDescription)
+            }
+        }
     }
 }
 

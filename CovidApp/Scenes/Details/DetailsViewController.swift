@@ -25,6 +25,9 @@ class DetailsViewController: UIViewController {
         return alertController
     }()
 
+    private lazy var bellOnImage = UIImage(named: "bellOn")?.withRenderingMode(.alwaysOriginal)
+    private lazy var bellOffImage = UIImage(named: "bellOff")?.withRenderingMode(.alwaysOriginal)
+
     static func getInstance() -> DetailsViewController {
         return DetailsViewController(nibName: "DetailsView", bundle: nil)
     }
@@ -32,11 +35,18 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Configure Navigation Item
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(notificationsTapped))
+
         // Configure Collection View
         collectionView.register(ConfirmedCollectionViewCell.nib(),
                                 forCellWithReuseIdentifier: ConfirmedCollectionViewCell.identifier)
 
         presenter.handleViewDidLoad()
+    }
+
+    @objc func notificationsTapped() {
+        presenter.handleNotificationsTapped()
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -57,7 +67,10 @@ extension DetailsViewController: DetailsView {
     }
 
     func set(notifications to: Bool) {
-        print("Set Notifications to \(to)")
+        switch to {
+        case true: navigationItem.rightBarButtonItem?.image = bellOnImage
+        case false: navigationItem.rightBarButtonItem?.image = bellOffImage
+        }
     }
 }
 

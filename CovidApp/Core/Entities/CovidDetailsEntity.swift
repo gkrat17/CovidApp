@@ -11,7 +11,7 @@ typealias NotificationsState = Bool
 
 struct CovidDetailsEntity {
     let identifier: CountryIdentifier
-    let hasNotifications: NotificationsState
+    var hasNotifications: NotificationsState
     let confirmed: [ConfirmedEntity]
 }
 
