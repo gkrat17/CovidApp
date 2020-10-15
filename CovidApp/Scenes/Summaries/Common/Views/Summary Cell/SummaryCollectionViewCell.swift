@@ -9,16 +9,10 @@ import UIKit
 
 class SummaryCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var superContentView: UIView!
     @IBOutlet var countryNameLabel: UILabel!
     @IBOutlet var totalConfirmedLabel: UILabel!
     @IBOutlet var totalDeathsLabel: UILabel!
     @IBOutlet var totalRecoveredLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        superContentView.backgroundColor = .cyan
-    }
 
     func configure(from model: SummaryViewModel) {
         countryNameLabel.text = model.countryName

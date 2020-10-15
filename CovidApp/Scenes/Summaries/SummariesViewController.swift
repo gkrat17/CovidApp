@@ -67,4 +67,20 @@ extension SummariesViewController: UICollectionViewDataSource {
     }
 }
 
-// extension SummariesViewController: UICollectionViewDelegateFlowLayout { }
+extension SummariesViewController: UICollectionViewDelegateFlowLayout {
+
+    var collectionViewInset: CGFloat { 10 }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        let inset: CGFloat = collectionViewInset
+        return UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: UIScreen.main.bounds.width - 2 * collectionViewInset, height: 80)
+    }
+}
