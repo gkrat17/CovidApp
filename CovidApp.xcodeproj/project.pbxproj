@@ -35,6 +35,7 @@
 		068EE2182538B5C500534CF8 /* ConfirmedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068EE2162538B5C500534CF8 /* ConfirmedCollectionViewCell.xib */; };
 		068EE21D2538B5D700534CF8 /* ConfirmedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EE21C2538B5D700534CF8 /* ConfirmedViewModel.swift */; };
 		068EE2392538D70B00534CF8 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EE2382538D70B00534CF8 /* DateExtensions.swift */; };
+		068EE25E2538E9FD00534CF8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EE25D2538E9FD00534CF8 /* BaseNavigationController.swift */; };
 		06C1E9E42535D4D100089322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E32535D4D100089322 /* AppDelegate.swift */; };
 		06C1E9E62535D4D100089322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E52535D4D100089322 /* SceneDelegate.swift */; };
 		06C1E9E82535D4D100089322 /* SummariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E72535D4D100089322 /* SummariesViewController.swift */; };
@@ -107,6 +108,7 @@
 		068EE2162538B5C500534CF8 /* ConfirmedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmedCollectionViewCell.xib; sourceTree = "<group>"; };
 		068EE21C2538B5D700534CF8 /* ConfirmedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedViewModel.swift; sourceTree = "<group>"; };
 		068EE2382538D70B00534CF8 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		068EE25D2538E9FD00534CF8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		06C1E9E02535D4D100089322 /* CovidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C1E9E32535D4D100089322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06C1E9E52535D4D100089322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		06091F5F253795D800654ED2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				068EE25B2538E9C900534CF8 /* Common */,
 				06091F60253795EF00654ED2 /* Summaries */,
 				06091F61253795F900654ED2 /* Details */,
 			);
@@ -380,6 +383,22 @@
 				068EE2382538D70B00534CF8 /* DateExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		068EE25B2538E9C900534CF8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				068EE25C2538E9D100534CF8 /* Navigation Controller */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		068EE25C2538E9D100534CF8 /* Navigation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				068EE25D2538E9FD00534CF8 /* BaseNavigationController.swift */,
+			);
+			path = "Navigation Controller";
 			sourceTree = "<group>";
 		};
 		06C1E9D72535D4D100089322 = {
@@ -738,6 +757,7 @@
 				06091F632537964500654ED2 /* DetailsViewController.swift in Sources */,
 				06C829B82536F6FB00429BA6 /* DBConfirmedEntity+CoreDataProperties.swift in Sources */,
 				06091F4825378D7900654ED2 /* NotificationsStateUpdaterUseCase.swift in Sources */,
+				068EE25E2538E9FD00534CF8 /* BaseNavigationController.swift in Sources */,
 				06C1EA202535F20600089322 /* LocalPersistenceCovidStatGateway.swift in Sources */,
 				06C829BA2536F6FB00429BA6 /* DBCovidSummaryEntity+CoreDataProperties.swift in Sources */,
 				063B3D1D25379DF900CC62C6 /* DetailsPresenter.swift in Sources */,

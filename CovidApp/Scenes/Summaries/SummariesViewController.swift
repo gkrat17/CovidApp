@@ -37,6 +37,11 @@ class SummariesViewController: UIViewController {
 
         presenter.handleViewDidLoad()
     }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.reloadData()
+    }
 }
 
 extension SummariesViewController: SummariesView {

@@ -19,6 +19,6 @@ struct SummariesRouterImplementation: SummariesRouter {
         let viewController = DetailsViewController()
         let configurator = DetailsConfigurator()
         configurator.configure(viewController, with: params)
-        self.viewController?.present(viewController, animated: true, completion: nil)
+        self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }
 }
