@@ -26,7 +26,7 @@ struct DetailsConfigurator {
             identifier: params.identifier,
             gateway: gateway
         )
-        let notificationsStateUpdaterUseCase: NotificationsStateUpdaterUseCase = NotificationsStateUpdaterUseCaseImplementation (
+        let notificationsStateUseCase: NotificationsStateUseCase = NotificationsStateUseCaseImplementation (
             identifier: params.identifier,
             gateway: gateway
         )
@@ -34,8 +34,9 @@ struct DetailsConfigurator {
         // Create Presenter
         let presenter: DetailsPresenter = DetailsPresenterImplementation (
             view: viewController,
+            identifier: params.identifier,
             detailsFetchingUseCase: detailsFetchingUseCase,
-            notificationsStateUpdaterUseCase: notificationsStateUpdaterUseCase
+            notificationsStateUseCase: notificationsStateUseCase
         )
 
         // Inject Presenter into ViewController

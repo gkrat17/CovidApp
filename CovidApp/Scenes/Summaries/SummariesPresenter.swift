@@ -17,10 +17,11 @@ protocol SummariesPresenter {
 class SummariesPresenterImplementation: SummariesPresenter {
 
     weak var view: SummariesView?
+
     let summariesFetchingUseCase: SummariesFetchingUseCase
     let router: SummariesRouter
 
-    var summaries: [CovidSummaryEntity] = .init() // initially empty
+    var summaries: [CovidSummaryEntity] = .init()
 
     init (
         view: SummariesView,

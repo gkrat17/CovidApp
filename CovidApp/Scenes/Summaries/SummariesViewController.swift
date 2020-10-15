@@ -16,7 +16,7 @@ class SummariesViewController: UIViewController {
 
     var presenter: SummariesPresenter!
 
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
 
     static func getInstance() -> SummariesViewController {
         return SummariesViewController(nibName: "SummariesView", bundle: nil)
@@ -41,7 +41,7 @@ extension SummariesViewController: SummariesView {
 
     func show(error: String) {
         let alertController = UIAlertController(title: error, message: nil, preferredStyle: .alert)
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 }
 

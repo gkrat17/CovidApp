@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ConfirmedCollectionViewCell" id="gTV-IL-0wX" customClass="ConfirmedCollectionViewCell" customModule="CovidApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6h-ZD-gMv">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0d-eE-cmd" userLabel="Count Label">
+                                <rect key="frame" x="8" y="29.5" width="46.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-fy-dsP" userLabel="Date Label">
+                                <rect key="frame" x="356" y="29.5" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ddY-fy-dsP" firstAttribute="centerY" secondItem="B6h-ZD-gMv" secondAttribute="centerY" id="4wt-Ur-e2E"/>
+                            <constraint firstAttribute="trailing" secondItem="ddY-fy-dsP" secondAttribute="trailing" constant="8" id="cP3-Qe-IqV"/>
+                            <constraint firstItem="Z0d-eE-cmd" firstAttribute="centerY" secondItem="B6h-ZD-gMv" secondAttribute="centerY" id="wmD-zv-BdP"/>
+                            <constraint firstItem="Z0d-eE-cmd" firstAttribute="leading" secondItem="B6h-ZD-gMv" secondAttribute="leading" constant="8" id="yQH-qZ-RhQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="B6h-ZD-gMv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7nD-fB-FTN"/>
+                <constraint firstItem="B6h-ZD-gMv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KNO-mI-3Tv"/>
+                <constraint firstAttribute="bottom" secondItem="B6h-ZD-gMv" secondAttribute="bottom" id="TGf-hC-9qh"/>
+                <constraint firstAttribute="trailing" secondItem="B6h-ZD-gMv" secondAttribute="trailing" id="Vpx-Pq-Ob1"/>
+            </constraints>
+            <size key="customSize" width="400" height="80"/>
+            <connections>
+                <outlet property="countLabel" destination="Z0d-eE-cmd" id="Rnv-f1-99G"/>
+                <outlet property="dateLabel" destination="ddY-fy-dsP" id="bpB-5N-W1n"/>
+            </connections>
+            <point key="canvasLocation" x="391.304347826087" y="121.875"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
