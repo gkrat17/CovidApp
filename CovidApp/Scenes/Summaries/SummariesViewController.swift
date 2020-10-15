@@ -16,29 +16,18 @@ class SummariesViewController: UIViewController {
 
     var presenter: SummariesPresenter!
 
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    @IBOutlet var collectionView: UICollectionView!
+
+    static func getInstance() -> SummariesViewController {
+        return SummariesViewController(nibName: "SummariesView", bundle: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let configurator = SummariesConfigurator()
-        configurator.configure(self)
-
-        view.backgroundColor = .green
-        collectionView.backgroundColor = .brown
-
-        // Configure collectionView
-        view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([ // resize to full screen
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
-        collectionView.register(SummaryCollectionViewCell.nib(), forCellWithReuseIdentifier: SummaryCollectionViewCell.identifier)
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        // Configure Collection View
+        collectionView.register(SummaryCollectionViewCell.nib(),
+                                forCellWithReuseIdentifier: SummaryCollectionViewCell.identifier)
 
         presenter.handleViewDidLoad()
     }
