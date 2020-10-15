@@ -9,8 +9,8 @@ import Foundation
 
 struct FetchSummariesApiRequest: ApiServiceRequest {
 
-    var urlRequest: URLRequest {
-        let url = URL(string: "\(root)summary")!
+    var urlRequest: URLRequest? {
+        guard let url = URL(string: "\(root)summary") else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         return request

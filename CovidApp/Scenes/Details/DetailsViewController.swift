@@ -19,6 +19,12 @@ class DetailsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    private lazy var alertController: UIAlertController = {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        return alertController
+    }()
+
     static func getInstance() -> DetailsViewController {
         return DetailsViewController(nibName: "DetailsView", bundle: nil)
     }
@@ -41,10 +47,7 @@ extension DetailsViewController: DetailsView {
     }
 
     func show(error: String) {
-        let alertController = UIAlertController(title: error, message: nil, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction) in
-          print("OK logic here")
-        }))
+        alertController.title = error
         present(alertController, animated: true, completion: nil)
     }
 

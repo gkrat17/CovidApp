@@ -27,12 +27,18 @@ class ApiServiceImplemetation: ApiService {
 
     func startRequest<T: Decodable>(request: ApiServiceRequest, completion: @escaping ApiServiceResponseHandler<T>) {
 
-        session.dataTask(with: request.urlRequest) { (data, response, error) in
+        guard let request = request.urlRequest
+        else {
+            completion(.failure(CoreError(message: "Can not create request")))
+            return
+        }
+
+        session.dataTask(with: request) { (data, response, error) in
 
             guard let data = data,
                   let httpResponse = response as? HTTPURLResponse
             else {
-                completion(.failure(CoreError(message: "Application did not get responded data")))
+                completion(.failure(CoreError(message: "Application did not get requested data")))
                 return
             }
 

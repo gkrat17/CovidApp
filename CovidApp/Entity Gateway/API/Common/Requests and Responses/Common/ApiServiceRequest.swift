@@ -9,7 +9,7 @@ import Foundation
 
 protocol ApiServiceRequest {
     var root: String { get }
-    var urlRequest: URLRequest { get }
+    var urlRequest: URLRequest? { get }
 }
 
 extension ApiServiceRequest {

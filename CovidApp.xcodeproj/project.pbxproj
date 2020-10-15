@@ -18,7 +18,7 @@
 		06091F362537805300654ED2 /* CacheCovidStatGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F352537805300654ED2 /* CacheCovidStatGateway.swift */; };
 		06091F3E25378D3E00654ED2 /* SummariesFetchingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F3D25378D3E00654ED2 /* SummariesFetchingUseCase.swift */; };
 		06091F4325378D5300654ED2 /* DetailsFetchingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F4225378D5300654ED2 /* DetailsFetchingUseCase.swift */; };
-		06091F4825378D7900654ED2 /* NotificationsStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F4725378D7900654ED2 /* NotificationsStateUseCase.swift */; };
+		06091F4825378D7900654ED2 /* NotificationsStateUpdaterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F4725378D7900654ED2 /* NotificationsStateUpdaterUseCase.swift */; };
 		06091F632537964500654ED2 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06091F622537964500654ED2 /* DetailsViewController.swift */; };
 		063B3D0E25379DA400CC62C6 /* SummariesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063B3D0D25379DA400CC62C6 /* SummariesRouter.swift */; };
 		063B3D1325379DBF00CC62C6 /* SummariesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063B3D1225379DBF00CC62C6 /* SummariesConfigurator.swift */; };
@@ -34,6 +34,7 @@
 		068EE2172538B5C500534CF8 /* ConfirmedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EE2152538B5C500534CF8 /* ConfirmedCollectionViewCell.swift */; };
 		068EE2182538B5C500534CF8 /* ConfirmedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 068EE2162538B5C500534CF8 /* ConfirmedCollectionViewCell.xib */; };
 		068EE21D2538B5D700534CF8 /* ConfirmedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EE21C2538B5D700534CF8 /* ConfirmedViewModel.swift */; };
+		068EE2392538D70B00534CF8 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EE2382538D70B00534CF8 /* DateExtensions.swift */; };
 		06C1E9E42535D4D100089322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E32535D4D100089322 /* AppDelegate.swift */; };
 		06C1E9E62535D4D100089322 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E52535D4D100089322 /* SceneDelegate.swift */; };
 		06C1E9E82535D4D100089322 /* SummariesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1E9E72535D4D100089322 /* SummariesViewController.swift */; };
@@ -89,7 +90,7 @@
 		06091F352537805300654ED2 /* CacheCovidStatGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCovidStatGateway.swift; sourceTree = "<group>"; };
 		06091F3D25378D3E00654ED2 /* SummariesFetchingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummariesFetchingUseCase.swift; sourceTree = "<group>"; };
 		06091F4225378D5300654ED2 /* DetailsFetchingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFetchingUseCase.swift; sourceTree = "<group>"; };
-		06091F4725378D7900654ED2 /* NotificationsStateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsStateUseCase.swift; sourceTree = "<group>"; };
+		06091F4725378D7900654ED2 /* NotificationsStateUpdaterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsStateUpdaterUseCase.swift; sourceTree = "<group>"; };
 		06091F622537964500654ED2 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		063B3D0D25379DA400CC62C6 /* SummariesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummariesRouter.swift; sourceTree = "<group>"; };
 		063B3D1225379DBF00CC62C6 /* SummariesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummariesConfigurator.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		068EE2152538B5C500534CF8 /* ConfirmedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedCollectionViewCell.swift; sourceTree = "<group>"; };
 		068EE2162538B5C500534CF8 /* ConfirmedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmedCollectionViewCell.xib; sourceTree = "<group>"; };
 		068EE21C2538B5D700534CF8 /* ConfirmedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmedViewModel.swift; sourceTree = "<group>"; };
+		068EE2382538D70B00534CF8 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		06C1E9E02535D4D100089322 /* CovidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C1E9E32535D4D100089322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06C1E9E52535D4D100089322 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -364,6 +366,22 @@
 			path = "Confirmed Cell";
 			sourceTree = "<group>";
 		};
+		068EE2362538D6D500534CF8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				068EE2372538D6DB00534CF8 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		068EE2372538D6DB00534CF8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				068EE2382538D70B00534CF8 /* DateExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		06C1E9D72535D4D100089322 = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +405,7 @@
 		06C1E9E22535D4D100089322 /* CovidApp */ = {
 			isa = PBXGroup;
 			children = (
+				068EE2362538D6D500534CF8 /* Common */,
 				06091F5F253795D800654ED2 /* Scenes */,
 				06C1EA242535F21800089322 /* Core */,
 				06C1EA1C2535ECCC00089322 /* Entity Gateway */,
@@ -516,7 +535,7 @@
 			children = (
 				06C829CF2537047D00429BA6 /* Summaries Fetching */,
 				06C829D02537056300429BA6 /* Details Fetching */,
-				06C829D12537066500429BA6 /* Notifications State */,
+				06C829D12537066500429BA6 /* Notifications State Updater */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -537,12 +556,12 @@
 			path = "Details Fetching";
 			sourceTree = "<group>";
 		};
-		06C829D12537066500429BA6 /* Notifications State */ = {
+		06C829D12537066500429BA6 /* Notifications State Updater */ = {
 			isa = PBXGroup;
 			children = (
-				06091F4725378D7900654ED2 /* NotificationsStateUseCase.swift */,
+				06091F4725378D7900654ED2 /* NotificationsStateUpdaterUseCase.swift */,
 			);
-			path = "Notifications State";
+			path = "Notifications State Updater";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -708,6 +727,7 @@
 				063B3D2A2537A08500CC62C6 /* DetailsParameters.swift in Sources */,
 				06C829B92536F6FB00429BA6 /* DBCovidSummaryEntity+CoreDataClass.swift in Sources */,
 				06C829CA2536FAA400429BA6 /* CovidStatGateway.swift in Sources */,
+				068EE2392538D70B00534CF8 /* DateExtensions.swift in Sources */,
 				068EE2172538B5C500534CF8 /* ConfirmedCollectionViewCell.swift in Sources */,
 				06091EFE25375A5800654ED2 /* FetchConfirmedApiRequest.swift in Sources */,
 				063B3D0E25379DA400CC62C6 /* SummariesRouter.swift in Sources */,
@@ -717,7 +737,7 @@
 				06C829C52536FA4B00429BA6 /* CovidStatPersistingGateway.swift in Sources */,
 				06091F632537964500654ED2 /* DetailsViewController.swift in Sources */,
 				06C829B82536F6FB00429BA6 /* DBConfirmedEntity+CoreDataProperties.swift in Sources */,
-				06091F4825378D7900654ED2 /* NotificationsStateUseCase.swift in Sources */,
+				06091F4825378D7900654ED2 /* NotificationsStateUpdaterUseCase.swift in Sources */,
 				06C1EA202535F20600089322 /* LocalPersistenceCovidStatGateway.swift in Sources */,
 				06C829BA2536F6FB00429BA6 /* DBCovidSummaryEntity+CoreDataProperties.swift in Sources */,
 				063B3D1D25379DF900CC62C6 /* DetailsPresenter.swift in Sources */,

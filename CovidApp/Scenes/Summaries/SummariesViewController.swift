@@ -18,6 +18,12 @@ class SummariesViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    private lazy var alertController: UIAlertController = {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        return alertController
+    }()
+
     static func getInstance() -> SummariesViewController {
         return SummariesViewController(nibName: "SummariesView", bundle: nil)
     }
@@ -40,7 +46,7 @@ extension SummariesViewController: SummariesView {
     }
 
     func show(error: String) {
-        let alertController = UIAlertController(title: error, message: nil, preferredStyle: .alert)
+        alertController.title = error
         present(alertController, animated: true, completion: nil)
     }
 }

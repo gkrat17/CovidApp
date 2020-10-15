@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CoreError: Error {
-    var localizedDescription: String { message }
+struct CoreError: LocalizedError {
+    var errorDescription: String? { message }
     var message = ""
 }
