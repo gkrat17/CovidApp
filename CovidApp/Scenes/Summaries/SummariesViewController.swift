@@ -92,6 +92,19 @@ extension SummariesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: UIScreen.main.bounds.width - 2 * collectionViewInset, height: 80)
+
+        var width: CGFloat = UIScreen.main.bounds.width
+        let height: CGFloat = 80
+
+        let device = UIDevice.current
+        let orientation = device.orientation
+        let idiom = device.userInterfaceIdiom
+
+        if (orientation == .landscapeLeft || orientation == .landscapeRight) && idiom == .pad {
+            width /= 2
+        }
+        width -= 2 * collectionViewInset
+
+        return .init(width: width, height: height)
     }
 }
