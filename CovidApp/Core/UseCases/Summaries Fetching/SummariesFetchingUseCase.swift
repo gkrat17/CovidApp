@@ -18,6 +18,16 @@ struct SummariesFetchingUseCaseImplementation: SummariesFetchingUseCase {
     let gateway: CovidStatFetchingGateway
 
     func fetchSummaries(_ completion: @escaping SummariesFetchingHandler) {
-        gateway.fetchSummaries(completion)
+        gateway.fetchSummaries { (result) in
+            switch result {
+            case .success(var summaries):
+                summaries.sort { (lhs: CovidSummaryEntity, rhs: CovidSummaryEntity) -> Bool in
+                    return lhs.countryName < rhs.countryName
+                }
+                completion(.success(summaries))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }
