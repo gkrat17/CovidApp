@@ -12,23 +12,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ConfirmedCollectionViewCell" id="gTV-IL-0wX" customClass="ConfirmedCollectionViewCell" customModule="CovidApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6h-ZD-gMv">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0d-eE-cmd" userLabel="Count Label">
-                                <rect key="frame" x="8" y="29.5" width="46.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-fy-dsP" userLabel="Date Label">
+                                <rect key="frame" x="16" y="16" width="43.5" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-fy-dsP" userLabel="Date Label">
-                                <rect key="frame" x="356" y="29.5" width="36" height="21"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="virus" translatesAutoresizingMaskIntoConstraints="NO" id="udy-Ym-nBa" userLabel="Confirmed Image View">
+                                <rect key="frame" x="16" y="49.5" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="JrM-SP-axE"/>
+                                    <constraint firstAttribute="height" constant="32" id="bLZ-X3-tMx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0d-eE-cmd" userLabel="Confirmed Count Label">
+                                <rect key="frame" x="56" y="55" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,10 +43,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ddY-fy-dsP" firstAttribute="centerY" secondItem="B6h-ZD-gMv" secondAttribute="centerY" id="4wt-Ur-e2E"/>
-                            <constraint firstAttribute="trailing" secondItem="ddY-fy-dsP" secondAttribute="trailing" constant="8" id="cP3-Qe-IqV"/>
-                            <constraint firstItem="Z0d-eE-cmd" firstAttribute="centerY" secondItem="B6h-ZD-gMv" secondAttribute="centerY" id="wmD-zv-BdP"/>
-                            <constraint firstItem="Z0d-eE-cmd" firstAttribute="leading" secondItem="B6h-ZD-gMv" secondAttribute="leading" constant="8" id="yQH-qZ-RhQ"/>
+                            <constraint firstItem="ddY-fy-dsP" firstAttribute="top" secondItem="B6h-ZD-gMv" secondAttribute="top" constant="16" id="F8y-JV-tsu"/>
+                            <constraint firstItem="udy-Ym-nBa" firstAttribute="leading" secondItem="ddY-fy-dsP" secondAttribute="leading" id="SJo-34-bvT"/>
+                            <constraint firstItem="udy-Ym-nBa" firstAttribute="top" secondItem="ddY-fy-dsP" secondAttribute="bottom" constant="8" id="UAO-94-Obp"/>
+                            <constraint firstItem="ddY-fy-dsP" firstAttribute="leading" secondItem="B6h-ZD-gMv" secondAttribute="leading" constant="16" id="ZuK-uu-Bg7"/>
+                            <constraint firstItem="Z0d-eE-cmd" firstAttribute="centerY" secondItem="udy-Ym-nBa" secondAttribute="centerY" id="d1h-RQ-cxH"/>
+                            <constraint firstItem="Z0d-eE-cmd" firstAttribute="leading" secondItem="udy-Ym-nBa" secondAttribute="trailing" constant="8" id="tKd-as-u0P"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -51,15 +60,16 @@
                 <constraint firstAttribute="bottom" secondItem="B6h-ZD-gMv" secondAttribute="bottom" id="TGf-hC-9qh"/>
                 <constraint firstAttribute="trailing" secondItem="B6h-ZD-gMv" secondAttribute="trailing" id="Vpx-Pq-Ob1"/>
             </constraints>
-            <size key="customSize" width="400" height="80"/>
+            <size key="customSize" width="400" height="100"/>
             <connections>
                 <outlet property="countLabel" destination="Z0d-eE-cmd" id="Rnv-f1-99G"/>
                 <outlet property="dateLabel" destination="ddY-fy-dsP" id="bpB-5N-W1n"/>
             </connections>
-            <point key="canvasLocation" x="391.304347826087" y="121.875"/>
+            <point key="canvasLocation" x="391.304347826087" y="128.57142857142856"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="virus" width="512" height="512"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

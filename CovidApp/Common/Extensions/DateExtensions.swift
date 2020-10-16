@@ -23,4 +23,11 @@ extension Date {
         let dateAsString = dateFormatter.string(from: self)
         return dateAsString
     }
+
+    func toLocalizedString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd / MM / yyyy"
+        let dateAsString = dateFormatter.string(from: self)
+        return dateAsString
+    }
 }

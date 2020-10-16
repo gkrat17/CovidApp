@@ -74,6 +74,6 @@ class DetailsPresenterImplementation: DetailsPresenter {
 fileprivate extension ConfirmedEntity {
 
     func toConfirmedViewModel() -> ConfirmedViewModel {
-        return ConfirmedViewModel(count: String(count), date: date.toISO8601String())
+        return ConfirmedViewModel(count: String(count), date: date.toLocalizedString())
     }
 }

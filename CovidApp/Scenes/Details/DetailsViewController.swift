@@ -21,7 +21,9 @@ class DetailsViewController: UIViewController {
 
     private lazy var alertController: UIAlertController = {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel) { _ in
+            self.navigationController?.popViewController(animated: true)
+        })
         return alertController
     }()
 
@@ -34,6 +36,8 @@ class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        title = "Details"
 
         // Configure Navigation Item
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(notificationsTapped))
@@ -102,6 +106,16 @@ extension DetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: UIScreen.main.bounds.width - 2 * collectionViewInset, height: 80)
+
+        var width: CGFloat = UIScreen.main.bounds.width
+        let height: CGFloat = 100
+
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            width /= 2
+        }
+
+        width -= 2 * collectionViewInset
+
+        return .init(width: width, height: height)
     }
 }

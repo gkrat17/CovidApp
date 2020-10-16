@@ -15,7 +15,7 @@ struct FetchConfirmedApiRequest: ApiServiceRequest {
 
         let calendar = Calendar.current
         let starting = calendar.date(byAdding: .day, value: -1, to: Date())!
-        let from = calendar.date(byAdding: .weekOfYear, value: -1, to: starting)!.toISO8601String()
+        let from = calendar.date(byAdding: .month, value: -1, to: starting)!.toISO8601String()
         let to = starting.toISO8601String()
 
         guard let url = URL(string: "\(root)total/country/\(identifier)/status/confirmed?from=\(from)&to=\(to)")

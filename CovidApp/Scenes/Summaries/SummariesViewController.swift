@@ -31,6 +31,8 @@ class SummariesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Summary"
+
         // Configure Collection View
         collectionView.register(SummaryCollectionViewCell.nib(),
                                 forCellWithReuseIdentifier: SummaryCollectionViewCell.identifier)
@@ -94,7 +96,7 @@ extension SummariesViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         var width: CGFloat = UIScreen.main.bounds.width
-        let height: CGFloat = 80
+        let height: CGFloat = 120
 
         let device = UIDevice.current
         let orientation = device.orientation
