@@ -16,7 +16,7 @@ struct SummariesRouterImplementation: SummariesRouter {
     weak var viewController: SummariesViewController?
 
     func navigateToDetails(with params: DetailsParameters) {
-        let viewController = DetailsViewController()
+        let viewController = DetailsViewController.getInstance()
         let configurator = DetailsConfigurator()
         configurator.configure(viewController, with: params)
         self.viewController?.navigationController?.pushViewController(viewController, animated: true)
